@@ -44,6 +44,8 @@ x64/
 *.vssscc
 .builds
 
+!BehComponents.dll
+
 # Visual C++ cache files
 ipch/
 *.aps
