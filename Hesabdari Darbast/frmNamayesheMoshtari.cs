@@ -88,7 +88,7 @@ namespace Hesabdari_Darbast
                 cmd.Parameters.Clear();
                 cmd.Connection = con;
                 cmd.CommandText = "delete from tbl_Moshtari where IdMoshtari=@N";
-                cmd.Parameters.AddWithValue("@N",ID.Text);
+                cmd.Parameters.AddWithValue("@N", ID.Text);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -110,7 +110,8 @@ namespace Hesabdari_Darbast
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            frmMoshtari frm = new frmMoshtari();
+            //Change
+            frmMoshtari frm = new frmMoshtari(true);
             frm.txtId.Text = dgvMoshtari[0, dgvMoshtari.CurrentRow.Index].Value.ToString();
             frm.txtNameMoshtari.Text = dgvMoshtari[1, dgvMoshtari.CurrentRow.Index].Value.ToString();
             frm.txtKodeMeli.Text = dgvMoshtari[2, dgvMoshtari.CurrentRow.Index].Value.ToString();
@@ -143,7 +144,7 @@ namespace Hesabdari_Darbast
             frm.txtMazadErtefa.Text = dgvMoshtari[29, dgvMoshtari.CurrentRow.Index].Value.ToString();
             this.Close();
             frm.ShowDialog();
-            frm.buttonX2.Visible =false;
+            frm.buttonX2.Visible = false;
             this.Close();
         }
     }

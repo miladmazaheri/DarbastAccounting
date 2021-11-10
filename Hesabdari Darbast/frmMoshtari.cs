@@ -16,15 +16,19 @@ namespace Hesabdari_Darbast
 {
     public partial class frmMoshtari : Form
     {
-        public frmMoshtari()
+        //Change
+        private readonly bool _isEditMode;
+        //Change
+        public frmMoshtari(bool isEditMode = false)
         {
+            //Change
+            _isEditMode = isEditMode;
             InitializeComponent();
+            //Change
+            buttonX2.Visible = _isEditMode;
         }
         SqlConnection con = new SqlConnection("Data source=EN2\\SQL2019;initial catalog=Hesabdaridb;integrated security=true");
         SqlCommand cmd = new SqlCommand();
-
-
-
 
         private void frmMoshtari_Load(object sender, EventArgs e)
         {
@@ -33,20 +37,20 @@ namespace Hesabdari_Darbast
             txtDore.Items.Add("1");
             txtErtefa.Items.Add("اختلاف");
             txtErtefa.Items.Add("از کل");
-            
+
         }
 
 
         private void checkBoxX1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxX1.Checked == true)
-                    txtTakhfif.Text = "2";
-  
+                txtTakhfif.Text = "2";
+
         }
 
 
 
- 
+
 
 
 
@@ -147,5 +151,5 @@ namespace Hesabdari_Darbast
             }
         }
     }
-    }
+}
 
